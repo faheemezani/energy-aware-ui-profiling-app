@@ -1,0 +1,1 @@
+# amict2025-green-pattern-testing-apps
