@@ -1,1 +1,1 @@
-# amict2025-green-pattern-testing-apps
+# AMICT 2025: Green Pattern Testing Apps
