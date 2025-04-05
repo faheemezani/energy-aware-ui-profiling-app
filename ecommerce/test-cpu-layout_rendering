@@ -45,3 +45,21 @@ kill $CPU_LOG_PID
 kill $LYR_LOG_PID
 
 echo "✅ Logs saved for prefix: $FILE_PREFIX"
+
+OUTPUT_FILE="results/layout_rendering/${FILE_PREFIX}_FRAME_DURATIONS.txt"
+
+# Extract timestamps from log and calculate deltas
+prev=""
+while read -r line; do
+  ns=$(echo "$line" | grep "Frame at:" | awk -F'Frame at: ' '{print $2}')
+  if [ -n "$ns" ]; then
+    if [ -n "$prev" ]; then
+      diff_ns=$((ns - prev))
+      diff_ms=$(awk "BEGIN {printf \"%.2f\", $diff_ns/1000000}")
+      echo "$diff_ms ms" | tee -a "$OUTPUT_FILE"
+    fi
+    prev=$ns
+  fi
+done < "results/layout_rendering/${FILE_PREFIX}_LAYOUT_RENDERING.txt"
+
+echo "✅ Frame durations written to: $OUTPUT_FILE"
