@@ -1,0 +1,47 @@
+#!/bin/bash
+
+FILE_PREFIX=$1
+
+if [ -z "$FILE_PREFIX" ]; then
+  echo "Usage: $0 <file_prefix>"
+  exit 1
+fi
+
+echo "Prefix is: $FILE_PREFIX"
+
+PACKAGE="my.edu.utem.faheemezani.ecommerce"
+
+rm -f "results/cpu/${FILE_PREFIX}_CPU.txt"
+rm -f "results/layout_rendering/${FILE_PREFIX}_LAYOUT_RENDERING.txt"
+
+# Ensure output directories exist
+mkdir -p results/cpu
+mkdir -p results/layout_rendering
+
+# Clear previous frame
+adb shell dumpsys gfxinfo "$PACKAGE" reset
+
+# Clear up the logs before anything
+adb logcat -c
+sleep 2
+
+# Start FrameTiming log capture
+adb logcat -s FrameTiming > "results/layout_rendering/${FILE_PREFIX}_LAYOUT_RENDERING.txt" &
+LYR_LOG_PID=$!
+
+# Start CpuUsage log capture
+adb logcat -s CpuUsage > "results/cpu/${FILE_PREFIX}_CPU.txt" &
+CPU_LOG_PID=$!
+
+# Run the test-cpu-layout_rendering
+./gradlew connectedAndroidTest
+
+# Let logs run a bit longer
+sleep 2
+
+# Stop logging processes
+echo "✅ Killing CPU and FrameTiming logs..."
+kill $CPU_LOG_PID
+kill $LYR_LOG_PID
+
+echo "✅ Logs saved for prefix: $FILE_PREFIX"

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+PACKAGE="my.edu.utem.faheemezani.ecommerce"
+TEST_CLASS="my.edu.utem.faheemezani.ecommerce.EcommerceBrowsingTest#testBrowseSelectItemWorstCaseWithoutLogging"
+FILE_PREFIX="scenario_run"
+ITERATION=0
+
+# Make sure USB charging is disabled (if supported)
+adb shell dumpsys battery set usb 0
+
+# Reset battery stats and charge state
+adb shell dumpsys batterystats --reset
+adb shell dumpsys batterystats --charged
+
+# Get initial charge counter
+INITIAL_CHARGE=$(adb shell dumpsys battery | grep -i "charge counter" | awk '{print $NF}')
+if [ -z "$INITIAL_CHARGE" ]; then
+    echo "❌ Could not read chargeCounter. Device may not support it."
+    exit 1
+fi
+
+echo "🔋 Initial chargeCounter: $INITIAL_CHARGE µAh"
+CURRENT_CHARGE=$INITIAL_CHARGE
+
+# Loop until battery drain is detected
+while [ "$CURRENT_CHARGE" -ge "$INITIAL_CHARGE" ]; do
+    echo "🔁 Iteration $((++ITERATION))..."
+
+    ./gradlew connectedAndroidTest \
+      -Pandroid.testInstrumentationRunnerArguments.testName=$TEST_CLASS
+
+    sleep 3
+
+    CURRENT_CHARGE=$(adb shell dumpsys battery | grep chargeCounter | awk '{print $2}')
+    echo "🔋 Current chargeCounter: $CURRENT_CHARGE µAh"
+done
+
+echo "✅ Battery charge dropped. Stopping test loop."
+echo "🔻 Final charge: $CURRENT_CHARGE µAh (Dropped from $INITIAL_CHARGE µAh)"
+
+# Restore normal USB charging
+adb shell dumpsys battery reset
