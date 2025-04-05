@@ -1,5 +1,6 @@
 package my.edu.utem.faheemezani.ecommerce;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -14,6 +15,9 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.Matchers.anything;
+
+import static my.edu.utem.faheemezani.ecommerce.AppConfig.ThemeMode.DARK;
+import static my.edu.utem.faheemezani.ecommerce.AppConfig.ThemeMode.LIGHT;
 
 import android.util.Log;
 import android.view.Choreographer;
