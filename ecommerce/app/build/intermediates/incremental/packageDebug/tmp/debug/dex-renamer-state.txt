@@ -1,0 +1,10 @@
+#Sat Apr 05 17:57:40 MYT 2025
+base.0=/Users/imac3/Desktop/AMICT 2025/apps/ecommerce/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/imac3/Desktop/AMICT 2025/apps/ecommerce/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/imac3/Desktop/AMICT 2025/apps/ecommerce/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=7/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

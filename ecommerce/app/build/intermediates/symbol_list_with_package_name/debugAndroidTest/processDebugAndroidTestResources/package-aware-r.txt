@@ -1,0 +1,3 @@
+my.edu.utem.faheemezani.ecommerce.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

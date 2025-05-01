@@ -1,0 +1,2 @@
+my.edu.utem.faheemezani.ecommerce.test:style/WhiteBackgroundTheme = 0x7f010001
+my.edu.utem.faheemezani.ecommerce.test:style/WhiteBackgroundDialogTheme = 0x7f010000
