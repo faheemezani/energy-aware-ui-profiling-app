@@ -1,6 +1,5 @@
 package my.edu.utem.faheemezani.ecommerce;
 
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -15,9 +14,6 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.Matchers.anything;
-
-import static my.edu.utem.faheemezani.ecommerce.AppConfig.ThemeMode.DARK;
-import static my.edu.utem.faheemezani.ecommerce.AppConfig.ThemeMode.LIGHT;
 
 import android.util.Log;
 import android.view.Choreographer;
@@ -56,6 +52,24 @@ public class EcommerceBrowsingTest {
 
     @Test
     public void textBrowseSelectItemWorstCaseWithoutLogging() {
+        long[] before = CpuUsageMonitor.readCpuTimes();
+        // Scroll to the last item (position 49) and click on it
+        onData(anything())
+                .inAdapterView(withId(R.id.productList))
+                .atPosition(49)
+                .perform(click());
+
+        // Verify product detail activity launched and title is correct
+        onView(withId(R.id.productTitle)).check(matches(withText("Product 50")));
+
+        // Perform additional action to simulate complete scenario
+        onView(withId(R.id.addToCartButton)).perform(click());
+        long[] after = CpuUsageMonitor.readCpuTimes();
+        logCpuUsage(before, after);
+    }
+
+    @Test
+    public void textBrowseSelectItemWorstCaseWithCPULogOnly() {
         // Scroll to the last item (position 49) and click on it
         onData(anything())
                 .inAdapterView(withId(R.id.productList))
