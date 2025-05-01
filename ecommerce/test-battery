@@ -31,7 +31,7 @@ while [ "$CURRENT_CHARGE" -ge "$INITIAL_CHARGE" ]; do
 
     sleep 3
 
-    CURRENT_CHARGE=$(adb shell dumpsys battery | grep chargeCounter | awk '{print $2}')
+    CURRENT_CHARGE=$(adb shell dumpsys battery | grep -i "charge counter" | awk '{print $NF}')
     echo "🔋 Current chargeCounter: $CURRENT_CHARGE µAh"
 done
 

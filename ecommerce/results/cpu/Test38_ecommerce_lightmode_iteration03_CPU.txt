@@ -1,0 +1,2 @@
+--------- beginning of main
+04-05 17:25:45.992  5399  5450 D CpuUsage: Approximate CPU usage: 32.0%

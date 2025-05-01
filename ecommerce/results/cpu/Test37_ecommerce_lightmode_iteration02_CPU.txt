@@ -1,0 +1,2 @@
+--------- beginning of main
+04-05 17:25:03.984  3205  3257 D CpuUsage: Approximate CPU usage: 30.000002%

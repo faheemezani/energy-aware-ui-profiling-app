@@ -1,0 +1,4 @@
+--------- beginning of main
+04-05 17:27:00.101  7719  7719 D FrameTiming: Frame at: 88659221026913
+04-05 17:27:00.568  7719  7719 D FrameTiming: Frame at: 88659687916449
+04-05 17:27:00.852  7719  7719 D FrameTiming: Frame at: 88659971499552

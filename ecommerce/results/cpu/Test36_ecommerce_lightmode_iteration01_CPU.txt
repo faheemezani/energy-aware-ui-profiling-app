@@ -1,2 +1,2 @@
 --------- beginning of main
-04-05 15:41:51.748  6097  6142 D CpuUsage: Approximate CPU usage: 32.0%
+04-05 17:24:00.646   715   797 D CpuUsage: Approximate CPU usage: 31.0%
