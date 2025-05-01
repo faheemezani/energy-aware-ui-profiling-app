@@ -26,7 +26,7 @@ These metrics were collected during the execution of dark and light mode UI patt
 
 This research was conducted under the  
 **Department of Software Engineering**,  
-**Faculty of Information and Communication Technology (FICT)**,  
+**Faculty of Information and Communication Technology (FICT/FTMK)**,  
 **Universiti Teknikal Malaysia Melaka (UTeM)**.
 
 ## 📄 Associated Publication
