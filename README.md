@@ -24,7 +24,7 @@ These metrics were collected during the execution of dark and light mode UI patt
 
 ## 🏛 Institutional Affiliation
 
-<img align="right" src="assets/utem-25300x_150.png" alt="UTeM logo" height="70"/><img align="right" src="Logo-FTMK-150.png" alt="FICT/FTMK logo" height="70"/>This research was conducted under the  
+<img align="right" src="assets/utem-25300x_150.png" alt="UTeM logo" height="70"/><br/><img align="right" src="assets/Logo-FTMK-150.png" alt="FICT/FTMK logo" height="70"/>This research was conducted under the  
 **Department of Software Engineering**,  
 **Faculty of Information and Communication Technology (FICT/FTMK)**,  
 **Universiti Teknikal Malaysia Melaka (UTeM)**.
