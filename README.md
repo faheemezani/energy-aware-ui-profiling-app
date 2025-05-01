@@ -31,15 +31,15 @@ This research was conducted under the
 
 ## 📄 Associated Publication
 
-Muhammad Faheem M. Ezani, *et al.*,  
+Muhammad Faheem Mohd Ezani, Muhammad Huzaifah Ismail, and Nor Hafeizah Hassan,  
 “Automated Profiling of Mobile UI/UX Energy Performance: A Comparative Study of Dark and Light Modes,”  
-In *Proceedings of AMICT 2025* (Accepted / Under Review).  
+In *Proceedings of the International Conference on Green Energy, Computing and Sustainable Technology (GECOST 2025)* (Under Review).  
 (Preprint and dataset: [Zenodo DOI](https://doi.org/10.5281/zenodo.15315445))
 
 ## 📂 Folder Structure
-```ecommerce/app/``` [source code files & folders for e-commerce based simulation app] 
-```results/``` [outputs from the bash shell scripts - also available on Zenodo]
-```ecommerce/app/src/androidTest/java/my/edu/utem/faheemezani/``` [Espresso UI automation tests]
+```ecommerce/app/``` [source code files & folders for e-commerce based simulation app] <br/>
+```results/``` [outputs from the bash shell scripts - also available on Zenodo] <br/>
+```ecommerce/app/src/androidTest/java/my/edu/utem/faheemezani/``` [Espresso UI automation tests] <br/>
 
 ## 📜 License
 
@@ -52,10 +52,10 @@ If you use this repository in your research, please cite:
 
 ```bibtex
 @misc{faheem2025uiapp,
-  author       = {M. E. Muhammad Faheem and I. Muhammad Huzaifah and H. Nor Hafeizah},
+  author       = {Mohd Ezani, Muhammad Faheem and Ismail, Muhammad Huzaifah and Hassan, Nor Hafeizah},
   title        = {Energy-Aware UI Profiling App},
   year         = {2025},
   publisher    = {GitHub},
-  howpublished = {\url{https://github.com/YOUR_USERNAME/Energy-Aware-UI-Profiling-App}},
+  howpublished = {\url{https://github.com/faheemezani/energy-aware-ui-profiling-app}},
   note         = {Used in energy profiling experiments comparing dark and light mode UI designs}
 }
