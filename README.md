@@ -34,7 +34,7 @@ This research was conducted under the
 
 Muhammad Faheem Mohd Ezani, Muhammad Huzaifah Ismail, and Nor Hafeizah Hassan,  
 “Automated Profiling of Mobile UI/UX Energy Performance: A Comparative Study of Dark and Light Modes,”  
-In *Proceedings of the International Conference on Green Energy, Computing and Sustainable Technology (GECOST 2025)* (Under Review).  
+In *Proceedings of the International Conference on Green Energy, Computing and Sustainable Technology (GECOST 2025)* (Accepted and published on IEEE Xplore).  
 (Preprint and dataset: [Zenodo DOI](https://doi.org/10.5281/zenodo.15315445))
 
 ## 📂 Folder Structure
